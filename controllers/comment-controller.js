@@ -47,7 +47,8 @@ const commentController = {
                     replies: body
                 }
             }, {
-                new: true
+                new: true,
+                runValidators: true
             })
             .then(dbPizzaData => {
                 if (!dbPizzaData) {
@@ -73,6 +74,7 @@ const commentController = {
                 }
             }, {
                 new: true
+
             })
             .then(dbPizzaData => res.json(dbPizzaData))
             .catch(err => res.json(err));
